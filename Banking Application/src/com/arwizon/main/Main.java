@@ -10,7 +10,6 @@ public class Main {
 		System.out.println("press 1 to  add customer  data");
 		System.out.println("press 2 to display customer data");
 		System.out.println("press 3 to search  data");
-	///	System.out.println("press 3 to delete customer data");
 		System.out.println("press 4 to exit");
 		
 		Scanner data=new Scanner(System.in);

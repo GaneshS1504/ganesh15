@@ -1,5 +1,4 @@
 package customerinterface;
-
 import com.arwizon.Model.Customer;
 
 public interface Interface {

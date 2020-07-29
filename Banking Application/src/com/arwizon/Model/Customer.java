@@ -1,7 +1,4 @@
 package com.arwizon.Model;
-
-//import java.util.Scanner;
-
 public class Customer {
 	
 static int  count=101;
