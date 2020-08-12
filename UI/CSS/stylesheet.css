@@ -1,0 +1,59 @@
+body{
+	background-image: url(../IMAGE/Capture1.PNG);
+	background-position: center;
+	
+}
+
+#header
+{
+	background-color:burlywood;
+	height: 75px;
+}
+
+
+.container
+{
+	
+	margin-top: 30px;
+	padding: 10px;
+	background-color: cadetblue;
+	border-radius: 10px;
+	font-family: sans-serif;
+	opacity: 0.9;
+	font-size: 20px;
+}
+
+
+.row
+{
+	width:500px
+	
+}
+.form-group
+{
+	width: 350px;
+}
+
+input[type="text"]:focus
+{
+	background-color:slategrey;
+	color: snow;
+}
+
+input[type="password"]:focus
+{
+	background-color:slategrey;
+	color: snow;
+}
+
+input[type="email"]:focus
+{
+	background-color:slategrey;
+	color: snow;
+}
+
+input[type="tel"]:focus
+{
+	background-color:slategrey;
+	color: snow;
+}

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>registration form</title>
+<link rel="stylesheet" href="../CSS/stylesheet.css"/>
+<link rel="stylesheet" href="../CSS/css/bootstrap.min.css"/>
+
+</head>
+<body>
+	<div id="header">
+		<h3 style="text-align: center;">Registration Form</h3>
+	</div>
+<div class="container" style="width: 570px;margin-left: 500px;">
+	<form onsubmit="return validate()" action="destination.html" method="GET">
+	
+		<div class="row">
+			<div class="col">
+				<label for="fname">Firstname</label>
+				<input type="text" class="form-control" id="fname" placeholder="Firstname" name="fname" oninput=check(); onchange=checkName();>
+				<span id="s1" style="color: red;"></span>
+				<span id="label1" style="color: red;"></span>
+			
+			</div>
+			<div class="col">
+				<label for="lname">Lastname</label>
+				<input type="text" class="form-control" id="lname" placeholder="Lastname" name="lname" oninput="check();">
+				<span id="label3" style="color: red;"></span>
+	
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="password">Password</label>
+			<input type="password" id="password" class="form-control" placeholder="Enter password" name="password" oninput="check();">
+			<span id="label2" style="color: red;"></span>
+		</div>
+		<div class="form-group">
+			<label for="phoneno">PhoneNo</label>
+			<input type="tel" id="phoneno" class="form-control" placeholder="Enter phoneno" name="phoneno" oninput="check();" onchange=checkphone();>
+			<span id="s2" style="color: red;"></span>
+			<span id="label4" style="color: red;"></span>
+		</div>
+		<div class="form-group">
+			<label for="email">E-mail</label>
+			<input type="email" id="email" class="form-control" placeholder="Enter email" name="email" oninput="check();">
+			<span id="label5" style="color: red;"></span>
+		</div>
+		<div class="form-group">
+			<label for="address">Address</label>
+			<input type="text" id="address" class="form-control" placeholder="Enter address" name="address"></div>
+		<div class="radio-inline">
+			<label >Gender:</label>
+			<input type="radio"  name="gender" value="male">Male
+			<input type="radio"  name="gender" value="female">Female
+		</div>
+		<div class="form-group">
+			<label for="sel">Experience</label>
+			<select id="sel">
+				<option>select</option>
+				<option>Fresher</option>
+				<option> lessthan 1 year </option>
+				<option>greater then 1-year</option>
+			</select>
+		</div>
+
+		<div class="form-group">
+			<label for="file">Resume</label>
+			<input type="file" id="file" class="form-control" multiple name="file" multiple onchange="checkFile()">
+			<span id="s3" style="color: red;"></span>
+		</div>
+		
+		<button type="submit"  class="btn btn-primary"value="submit">submit</button>
+		<button type="reset" class="btn btn-primary">reset</button>
+	</form>
+</div>
+
+<script type="text/javascript">
+	function validate()
+	{
+			var fname=document.getElementById("fname").value;
+			var pass=document.getElementById("password").value;
+	   		var lname=document.getElementById("lname").value;
+		   	var phone=document.getElementById("phoneno").value;
+		   	var mail=document.getElementById("email").value;   
+		
+		if(fname =="" && pass=="" && lname==""  && phone=="" && mail=="")
+		{
+			
+		
+			document.getElementById("fname").style.border="solid red 2px";
+			document.getElementById("label1").innerHTML="This field required"
+			document.getElementById("label1").style.visibility="visible";
+			document.getElementById("label2").innerHTML="This field required"
+			document.getElementById("password").style.border="solid red 2px";
+			document.getElementById("label2").style.visibility="visible";
+			document.getElementById("label3").innerHTML="This field required"
+			document.getElementById("lname").style.border="solid red 2px";
+			document.getElementById("label3").style.visibility="visible";
+			document.getElementById("label4").innerHTML="This field required"
+			document.getElementById("phoneno").style.border="solid red 2px";
+			document.getElementById("label4").style.visibility="visible";
+			document.getElementById("label5").innerHTML="This field required"
+			document.getElementById("email").style.border="solid red 2px";
+			document.getElementById("label5").style.visibility="visible";
+			return false;
+		}
+		else if(fname =="")
+		{
+			document.getElementById("fname").style.border="solid red 2px";
+			document.getElementById("label1").innerHTML="This field required";
+			return false;
+		}
+
+		else if(pass =="")
+		{
+			document.getElementById("password").style.border="solid red 2px";
+			document.getElementById("label2").style.innerHTML="This field required";
+			return false;
+		}
+		else if(lname =="")
+		{
+			document.getElementById("lname").style.border="solid red 2px";
+			document.getElementById("label3").style.innerHTML="This field required";
+			return false;
+		}		
+		else if(phone =="")	
+		{
+			document.getElementById("phoneno").style.border="solid red 2px";
+			document.getElementById("label4").style.innerHTML="This field required";
+			return false;
+		}
+		else if(mail =="")
+		{
+			document.getElementById("email").style.border="solid red 2px";
+			document.getElementById("label5").style.innerHTML="This field required";
+			return false;
+		}
+
+		 
+	  
+		else {
+			return true;
+		}
+	}
+	function check()
+	{
+		var b=document.getElementById("fname");
+		var c=document.getElementById("password");
+		var d=document.getElementById("lname");
+		var e=document.getElementById("phoneno");
+		var f=document.getElementById("email");
+		if(b.value)
+		{
+			document.getElementById("fname").style.border="none";			
+			document.getElementById("label1").style.visibility="hidden";
+		}
+	 	if(c.value)
+		{
+			
+			document.getElementById("password").style.border="none";
+			document.getElementById("label2").style.visibility="hidden";
+		}
+		if(d.value)
+		{
+			document.getElementById("lname").style.border="none";
+			document.getElementById("label3").style.visibility="hidden";
+		}
+		if(e.value)
+		{
+			document.getElementById("phoneno").style.border="none";	
+			document.getElementById("label4").style.visibility="hidden";
+		}
+		if(f.value)
+		{
+			document.getElementById("email").style.border="none";
+			document.getElementById("label5").style.visibility="hidden";
+		}
+	}
+
+	function checkName()
+	{
+		var fname=document.getElementById("fname").value;
+		
+		var regx="^[A-Za-z]+$";
+		
+			if(fname.search(regx) ==-1)
+			{
+				document.getElementById("s1").innerHTML="alphabets only";
+			}
+			else{
+				document.getElementById("s1").innerHTML="";
+			}
+			
+	}
+	function checkphone()
+	{
+		var phone=document.getElementById("phoneno").value;
+		var regx="^[7-9]{1}[0-9]{9}$";
+		if(phone.search(regx) ==-1)
+			{
+				
+				document.getElementById("s2").innerHTML="invalid phone number";
+			}
+		else{
+				document.getElementById("s2").innerHTML="";
+			}
+
+	}
+
+	function checkFile()
+	{
+		var f=document.getElementById("file");
+		var f1=f.files;
+		for(var i=0;i<f1.length ; i++)
+		{
+			if(f1[i].size > (10*1024))
+			document.getElementById("s3").innerHTML=f1[i].name+""+"file size exceeds 100kb";
+			else
+			{
+				document.getElementById("s3").innerHTML="";
+			}
+		}
+
+		
+	}
+</script>
+<script src="../CSS/js/jquery.js"></script>
+<script src="../CSS/js/popper.js"></script>
+<script src="../CSS/js/bootstrap.min.js"></script>
+</body>
+</html>
